@@ -3,6 +3,7 @@ package com.jarekjal.endo2.model.projection;
 import com.jarekjal.endo2.model.Training;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class TrainingRead {
 
@@ -10,7 +11,7 @@ public class TrainingRead {
     private LocalDateTime start;
     private String activity;
     private Integer distance;
-    private Integer duration;
+    private LocalTime duration;
     private String description;
 
     public TrainingRead(Training source) {
@@ -18,7 +19,7 @@ public class TrainingRead {
         this.start = source.getStart();
         this.activity = source.getActivity();
         this.distance = source.getDistance();
-        this.duration = source.getDuration();
+        this.duration = LocalTime.ofSecondOfDay(source.getDuration());
         this.description = source.getDescription();
     }
 
@@ -54,11 +55,11 @@ public class TrainingRead {
         this.distance = distance;
     }
 
-    public Integer getDuration() {
+    public LocalTime getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(LocalTime duration) {
         this.duration = duration;
     }
 
