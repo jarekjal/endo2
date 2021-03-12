@@ -29,6 +29,14 @@ public class Training {
     public Training() {
     }
 
+    public Training(LocalDateTime start, String activity, Integer distance, Integer duration, String description) {
+        this.start = start;
+        this.activity = activity;
+        this.distance = distance;
+        this.duration = duration;
+        this.description = description;
+    }
+
     public Integer getId() {
         return id;
     }

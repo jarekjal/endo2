@@ -1,5 +1,7 @@
 package com.jarekjal.endo2.model.projection;
 
+import com.jarekjal.endo2.model.Training;
+
 import java.time.LocalDateTime;
 
 public class TrainingWrite {
@@ -48,5 +50,9 @@ public class TrainingWrite {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Training toTraining() {
+        return new Training(start, activity, distance, duration, description);
     }
 }
